@@ -21,11 +21,11 @@ jobs:
       run: nuget restore PrintSpoofer.sln
  
     - name: Build and Publish Web App
-      run: msbuild PrintSpoofer.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
+      run: msbuild PrintSpoofer.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile /p:OutputPath=D:\a\newbuild\
  
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
         name: PrintSpoofer
-        path: "D:/a/PrintSpoofer/PrintSpoofer/SafetyKatz/bin/"
+        path: "D:\a\newbuild\"
  
