@@ -21,10 +21,10 @@ jobs:
       run: nuget restore PrintSpoofer.sln
  
     - name: Build and Publish Web App
-      run: msbuild PrintSpoofer.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile /p:OutputPath=D:\a\newbuild\
+      run: msbuild PrintSpoofer.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
  
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
         name: PrintSpoofer
-        path: "D:/a/newbuild/"
+        path: "D:/a/PrintSpoofer/PrintSpoofer/x64/Release"
