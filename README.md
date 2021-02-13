@@ -8,6 +8,7 @@ For more information: [https://itm4n.github.io/printspoofer-abusing-impersonate-
   <img src="demo.gif">
 </p>
 
+
 ## Usage
 
 You can check the help message using the `-h` option.
