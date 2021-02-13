@@ -16,15 +16,23 @@ jobs:
        
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v1.0.2
-     
+      env:
+       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+
     - name: Restore NuGet Packages
       run: nuget restore PrintSpoofer.sln
- 
+      env:
+       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+
     - name: Build and Publish Web App
       run: msbuild PrintSpoofer.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
- 
+      env:
+       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+       
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
         name: PrintSpoofer
         path: "D:/a/PrintSpoofer/PrintSpoofer/x64/Release"
+      env:
+       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
